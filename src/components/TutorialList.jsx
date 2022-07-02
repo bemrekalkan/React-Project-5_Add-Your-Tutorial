@@ -26,9 +26,11 @@ const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
                 <td>{description}</td>
                 <td className="text-center">
                   <FaEdit
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-modal"
                     size={20}
-                    className="me-3 text-warning cursor-pointer "
-                    onClick={() => editTutorial(id, "CSS", "StyleSheet")}
+                    className="me-3 text-warning cursor-pointer"
+                    onClick={() => editTutorial(id, "CSS", "Styleheet")}
                   />
                   <AiFillDelete
                     size={22}
