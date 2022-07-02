@@ -8,6 +8,7 @@ const Home = () => {
 
   const url = "https://cw-axios-example.herokuapp.com/api/tutorials";
 
+  //! GET (Read) 👇
   //? Fetching data from API with try-catch 👇
   const getTutorials = async () => {
     try {
@@ -26,8 +27,13 @@ const Home = () => {
 
   console.log(tutorials);
 
-  const addTutorial = () => {
-    console.log("add");
+  //! POST (Create)
+  const addTutorial = async (tutorial) => {
+    try {
+      await axios.post(url, tutorial);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
