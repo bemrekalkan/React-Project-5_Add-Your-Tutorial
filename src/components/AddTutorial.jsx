@@ -5,10 +5,12 @@ const AddTutorial = ({ addTutorial }) => {
   const [desc, setDesc] = useState("");
 
   const handleSubmit = (e) => {
-    //! turn off automatic page refresh 👇
+    //! turn off automatic refresh with preventDefault()👇
     e.preventDefault();
 
     addTutorial({ title: title, description: desc });
+    setTitle("");
+    setDesc("");
   };
 
   return (
