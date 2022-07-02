@@ -34,7 +34,7 @@ const Home = () => {
     } catch (error) {
       console.log(error);
     }
-    //! After sending the data to the API with submit, we are calling the data from the API again. So final datas will appear on the page without refreshing  👇
+    //! After sending the data to the API with submit, we are calling the data from the API again with getTutorials() function. So final datas will appear on the page without refreshing  👇
     getTutorials();
   };
 
