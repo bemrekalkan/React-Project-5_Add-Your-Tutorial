@@ -38,10 +38,20 @@ const Home = () => {
     getTutorials();
   };
 
+  //! DELETE 👇
+  const deleteTutorial = async (id) => {
+    try {
+      await axios.delete(`${url}/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials();
+  };
+
   return (
     <>
       <AddTutorial addTutorial={addTutorial} />
-      <TutorialList tutorials={tutorials} />
+      <TutorialList tutorials={tutorials} deleteTutorial={deleteTutorial} />
     </>
   );
 };
