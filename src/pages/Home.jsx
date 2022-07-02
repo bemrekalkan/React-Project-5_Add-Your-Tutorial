@@ -26,9 +26,13 @@ const Home = () => {
 
   console.log(tutorials);
 
+  const addTutorial = () => {
+    console.log("add");
+  };
+
   return (
     <>
-      <AddTutorial />
+      <AddTutorial addTutorial={addTutorial} />
       <TutorialList tutorials={tutorials} />
     </>
   );

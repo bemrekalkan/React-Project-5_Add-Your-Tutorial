@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-const AddTutorial = () => {
+const AddTutorial = ({ addTutorial }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
-  const handleSubmit = (e) => {
-
-  };
+  const handleSubmit = (e) => {};
 
   return (
     <div className="container text-center mt-4">
