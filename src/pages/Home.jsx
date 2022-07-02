@@ -8,10 +8,15 @@ const Home = () => {
 
   const url = "https://cw-axios-example.herokuapp.com/api/tutorials";
 
+  //? Fetching data from API with try-catch 👇
   const getTutorials = async () => {
-    //! Destructring:
-    const { data } = await axios.get(url);
-    setTutorials(data);
+    try {
+      //! Destructring 👇:
+      const { data } = await axios.get(url);
+      setTutorials(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   //! Only makes requests when component mount happens
@@ -19,12 +24,12 @@ const Home = () => {
     getTutorials();
   }, []);
 
-  // getTutorials();
+  console.log(tutorials);
 
   return (
     <>
       <AddTutorial />
-      <TutorialList />
+      <TutorialList tutorials={tutorials} />
     </>
   );
 };
